@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>Update Message</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="body">Message:</label>
+        <textarea id="body" name="body" class="form-control" rows="5">{{ message.body }}</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+{% endblock %}
